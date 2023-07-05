@@ -6,10 +6,12 @@ import pages.HomePage;
 
 public class LoginTest extends BaseTest{
     @Test
-    public void logiUserValidData(){
-        loginPage.open();
-        loginPage.loginReg("obepgu-3c6t@force.com","vara89083");
-        Assert.assertTrue(homePage.isPageOpen());
+    public void loginUserValidData(){
+        boolean isHomePageOpened = loginPage.open()
+                .login("dashikasam-rjq4@force.com","vara89083")
+                        .clikLoginButton()
+                                .isPageOpen();
+        Assert.assertTrue(isHomePageOpened);
 
     }
 }
