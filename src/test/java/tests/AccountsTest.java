@@ -1,5 +1,7 @@
 package tests;
 
+import models.Account;
+
 public class AccountsTest extends BaseTest{
 
     public void accountshouldBeCreated(){
@@ -11,8 +13,9 @@ public class AccountsTest extends BaseTest{
         accountsListPage.open()
                 //клик кнопку NEW
         .clickNewButton()
+                Account account = new Account("","")
         //заполнить поля все
-                .create("TestName","www.onliner.by/");
+                accountsModalPage.create(account);
         //нажать сохранить
 
         //проверить создание

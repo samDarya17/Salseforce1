@@ -22,6 +22,7 @@ public class BaseTest {
     AccountsModalPage accountsModalPage;
 
 
+
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
