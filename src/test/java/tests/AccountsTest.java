@@ -12,10 +12,10 @@ public class AccountsTest extends BaseTest{
         //открыть  стр аккаунт
         accountsListPage.open()
                 //клик кнопку NEW
-        .clickNewButton()
-                Account account = new Account("","")
+        .clickNewButton();
+                Account account = new Account("","");
         //заполнить поля все
-                accountsModalPage.create(account);
+                        accountsModalPage.create(account);
         //нажать сохранить
 
         //проверить создание
