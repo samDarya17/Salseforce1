@@ -17,6 +17,8 @@ public class AccountsTest extends BaseTest{
         //заполнить поля все
                         accountsModalPage.create(account);
         //нажать сохранить
+                                accountsModalPage.clickSaveButton()
+                                .isPageOpen();
 
         //проверить создание
 

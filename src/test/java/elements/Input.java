@@ -2,6 +2,9 @@ package elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.DetailsPage;
+
+import static pages.AccountsModalPage.SAVE_BUTTON;
 
 public class Input {
     String inputLocator = "//span[text() = '%s']/ancestor::div[contains(@class, 'uiInput')]//input ";
@@ -19,4 +22,8 @@ public class Input {
 
 
     }
+    public DetailsPage clickSaveButton(){
+        driver.findElement(SAVE_BUTTON).click();
+        return new DetailsPage(driver);
+}
 }
