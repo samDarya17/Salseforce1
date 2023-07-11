@@ -1,5 +1,6 @@
 package pages;
 
+import elements.DropDown;
 import elements.Input;
 import models.Account;
 import org.openqa.selenium.By;
@@ -15,14 +16,16 @@ public class AccountsModalPage extends BasePage{
     public AccountsModalPage(WebDriver driver) {
         super(driver);
     }
-    public void create(Account account){
+    public DetailsPage create(Account account){
 
         new Input(driver,"Account Name").write(account.getAccountName());
         new Input(driver,"Website").write(account.getWebsite());
+        new DropDown(driver,"Type").selectOption(account.getType());
+        return clickSave();
 
 
             }
-    public DetailsPage clickSaveButton(){
+    public DetailsPage clickSave(){
         driver.findElement(SAVE_BUTTON).click();
         return new DetailsPage(driver);
     }

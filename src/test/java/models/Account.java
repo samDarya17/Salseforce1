@@ -3,6 +3,13 @@ package models;
 public class Account {
     String accountName;
     String website;
+    String type;
+
+    public Account(String accountName, String website, String type) {
+        this.accountName = accountName;
+        this.website = website;
+        this.type = type;
+    }
 
     public String getAccountName() {
         return accountName;
@@ -20,8 +27,11 @@ public class Account {
         this.website = website;
     }
 
-    public Account(String accountName, String website) {
-        this.accountName = accountName;
-        this.website = website;
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
