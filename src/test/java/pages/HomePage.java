@@ -14,4 +14,8 @@ public class HomePage extends BasePage{
     public boolean isPageOpen() {
         return isExist(HOME_LINK);
     }
+    public HomePage openHomePage() {
+        driver.get(URL + "lightning/page/home");
+        return this;
+    }
 }

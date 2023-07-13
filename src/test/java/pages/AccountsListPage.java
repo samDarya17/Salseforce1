@@ -14,7 +14,7 @@ public class AccountsListPage extends BasePage{
         driver.findElement(NEW_BUTTON).click();
         return new AccountsModalPage(driver);
     }
-    public AccountsListPage open(){
+    public AccountsListPage openAccoutsListPage(){
         driver.get(URL + "lightning/o/Account/list");
         return this;
     }

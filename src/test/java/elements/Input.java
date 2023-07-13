@@ -16,12 +16,15 @@ public class Input {
         this.label = label;
     }
 
-    public void write(String text){
-        driver.findElement(By.xpath(String.format(inputLocator,this.label))).clear();
-        driver.findElement(By.xpath(String.format(inputLocator,this.label))).sendKeys(text);
+    public void write(String text) {
+        driver.findElement(By.xpath(String.format(inputLocator, this.label))).clear();
+        driver.findElement(By.xpath(String.format(inputLocator, this.label))).sendKeys(text);
 
 
     }
+
+
+
     public DetailsPage clickSaveButton(){
         driver.findElement(SAVE_BUTTON).click();
         return new DetailsPage(driver);
