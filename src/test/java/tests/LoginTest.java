@@ -1,20 +1,17 @@
-
-
 package tests;
 
-        import org.testng.annotations.Test;
-        import static org.testng.Assert.assertTrue;
-        import pages.HomePage;
+import org.testng.annotations.Test;
 
+import static org.testng.Assert.*;
 
 public class LoginTest extends BaseTest {
-    @Test
-    public void loginUserWithValidData() {
-        boolean isHomePageOpened = loginPage.open()
-                .login("dashikasam-rjq4@force.com","vara89083")
-                .clickLoginButton()
-                .isPageOpen();
-        assertTrue(isHomePageOpened);
 
+    @Test
+    public void loginUserIsValidData(){
+        boolean isHomePageOpen = loginPage.openSaleForce()
+                .loginAndPassword("dashikasam-rjq4@force.com", "vara89083")
+                .clickLogInButton()
+                .isPageOpen();
+        assertTrue(isHomePageOpen);
     }
 }

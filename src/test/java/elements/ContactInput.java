@@ -3,12 +3,12 @@ package elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Input {
+public class ContactInput {
     WebDriver driver;
     String label;
-    String inputLocator = "//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//input";
+    String inputLocator = "//label[text()='%s']/ancestor::div[contains(@part,'input-text')]//input";
 
-    public Input(WebDriver driver, String label) {
+    public ContactInput(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
     }

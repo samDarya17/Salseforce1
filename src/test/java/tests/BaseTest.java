@@ -3,6 +3,7 @@ package tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
@@ -10,34 +11,45 @@ import pages.*;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-
     WebDriver driver;
-
     LoginPage loginPage;
     HomePage homePage;
-    AccountsListPage accountsListPage;
-    AccountsModalPage accountsModalPage;
-    DetailsPage detailsPage;
+    AccountListPage accountListPage;
+    AccountModalPage accountModalPage;
+    AccountDetailsPage accountDetailsPage;
+    ContactListPage contactListPage;
+    ContactModalPage contactModalPage;
+    ContactDetailsPage contactDetailsPage;
+
 
 
 
     @BeforeMethod
-    public void setUp() {
+    public void setUp(){
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        options.addArguments("--incognito");
+        driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         loginPage = new LoginPage(driver);
-        accountsListPage = new AccountsListPage(driver);
-        accountsModalPage = new AccountsModalPage(driver);
-        detailsPage = new DetailsPage(driver);
+        homePage = new HomePage(driver);
+        accountListPage = new AccountListPage(driver);
+        accountModalPage = new AccountModalPage(driver);
+        accountDetailsPage = new AccountDetailsPage(driver);
+        contactListPage = new ContactListPage(driver);
+        contactModalPage = new ContactModalPage(driver);
+        contactDetailsPage = new ContactDetailsPage(driver);
+
 
     }
-
     @AfterMethod(alwaysRun = true)
-    public void tearDown() {
+    public void tearDown(){
 
         driver.quit();
     }
 }
+
+
+//"oubguxk-ehlf@force.com","987654}
