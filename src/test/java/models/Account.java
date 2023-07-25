@@ -1,4 +1,12 @@
 package models;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@Builder
 
 public class Account {
     String accountName;
